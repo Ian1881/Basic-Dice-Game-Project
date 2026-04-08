@@ -1,35 +1,27 @@
+document.getElementById("myButton1").addEventListener("click", function () {
+    const player1Name = document.getElementById("player1-input").value;
+    document.querySelector(".player1-name").textContent = player1Name;
+})
+document.getElementById("myButton2").addEventListener("click", function () {
+    const player2Name = document.getElementById("player2-input").value;
+    document.querySelector(".player2-name").textContent = player2Name;
+})
 
-let playNowButton = document.querySelector("button");
+let diceRoll = document.querySelector(".btn");
 
-const player1 = prompt("Player 1, please enter your name:");
-const player2 = prompt("Player 2, please enter your name:");
+diceRoll.addEventListener("click", () => {
+    const player1Name = document.getElementById("player1-input").value || "Player 1";
+    const player2Name = document.getElementById("player2-input").value || "Player 2";
+    let diceImage1 = Math.floor(Math.random() * 6) + 1;
+    let diceImage2 = Math.floor(Math.random() * 6) + 1;
+    document.querySelector(".img1").setAttribute("src", 'images/dice' + diceImage1 + '.png');
+    document.querySelector(".img2").setAttribute("src", 'images/dice' + diceImage2 + '.png');
 
-document.querySelector(".player1-name").textContent = player1;
-document.querySelector(".player2-name").textContent = player2;
-
-playNowButton.addEventListener("click", gameRound);
-function gameRound() {
-let randomNumber1 = Math.floor(Math.random() * 6) + 1; 
-let randomNumber2 = Math.floor(Math.random() * 6) + 1; 
-
-let diceImage1 = document.querySelectorAll("img")[0]; 
-let diceImage2 = document.querySelectorAll("img")[1];
-
-diceImage1.setAttribute("src", "./images/dice" + randomNumber1 + ".png");
-diceImage2.setAttribute("src", "./images/dice" + randomNumber2 + ".png");
-
-if (randomNumber1 > randomNumber2) { 
-    document.querySelector("h1").innerHTML = player1 + "  Wins!"; 
-} else if (randomNumber2 > randomNumber1) {
-    document.querySelector("h1").innerHTML = player2 + "  Wins!";
-} else {
-    document.querySelector("h1").innerHTML = "It's a Draw!";
-}
-
-}
-
-
-
-
-
-
+    if (diceImage1 > diceImage2) {
+        document.querySelector("h1").textContent = player1Name + ' Wins!';
+    } else if (diceImage1 < diceImage2) {
+        document.querySelector("h1").textContent = player2Name + ' Wins!';
+    } else {
+        document.querySelector("h1").textContent = 'It\'s a Draw!';
+    }
+})
