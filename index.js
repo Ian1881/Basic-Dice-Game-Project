@@ -13,6 +13,10 @@ let score2 = 0;
 let playHeader = document.querySelector('.play-text');
 
 const game = function () {
+  if (!name1 || !name2) {
+    playHeader.textContent = 'Please enter both names first to play! 🎲';
+    return;
+  }
   dice1N = Math.floor(Math.random() * 6 + 1);
   dice2N = Math.floor(Math.random() * 6 + 1);
   diceImg1.setAttribute('src', `images/dice${dice1N}.png`);
