@@ -1,53 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Dice Game</title>
-  <link rel="stylesheet" href="styles.css" />
+  <body>
+    <div class="input-container">
+      <label>Player 1: </label>
+      <input type="text" id="player1-input" placeholder="Enter Player 1 Name" />
+      <button id="myButton1">Save</button>
 
-</head>
-
-<body>
-  <div class="input-container">
-    <label>Player 1: </label>
-    <input type="text" id="player1-input" placeholder="Enter Player 1 Name" />
-    <button id="myButton1">Save</button>
-
-    <label>Player 2: </label>
-    <input type="text" id="player2-input" placeholder="Enter Player 2 Name" />
-    <button id="myButton2">Save</button>
-  </div>
-
-  <div class="container">
-    <h1>Let's Play!</h1>
-    <div class="dice">
-      <p class="player1-name">Player 1</p>
-      <img class="img1" src="images/dice6.png" alt="Dice Image" />
-    </div>
-
-    <div class="dice">
-      <p class="player2-name">Player 2</p>
-      <img class="img2" src="images/dice6.png" alt="Dice Image" />
-    </div>
-
-    <div class="btn-container">
-      <button class="btn">Roll Dice</button>
+      <label>Player 2: </label>
+      <input type="text" id="player2-input" placeholder="Enter Player 2 Name" />
+      <button id="myButton2">Save</button>
     </div>
 
     <div class="container">
-      <h3>Score</h3>
-      <div>
-        <p class="score1">Player 1 Score</p>
-        <p class="score2">Player 2 Score</p>
+      <h1 class="play-text">Let's Play!</h1>
+      <div class="dice">
+        <p class="player1-name">Player 1</p>
+        <img class="img1" src="images/dice6.png" alt="Dice Image" />
+      </div>
+
+      <div class="dice">
+        <p class="player2-name">Player 2</p>
+        <img class="img2" src="images/dice6.png" alt="Dice Image" />
+      </div>
+
+      <div class="btn-container">
+        <button class="btn">Roll Dice</button>
+      </div>
+
+      <div class="container">
+        <div class="score-container">
+          <h3>Score</h3>
+          <div class="score-grid">
+            <div class="score-block">
+              <p class="score1">Player 1</p>
+              <p class="player1-score">0</p>
+            </div>
+            <div class="score-block">
+              <p class="score2">Player 2</p>
+              <p class="player2-score">0</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
+    <footer>Ian Gambling Entertainment</footer>
 
-  <footer>Ian Gambling Entertainment</footer>
-
-  <script src="index.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>
